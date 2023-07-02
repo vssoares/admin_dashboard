@@ -9,6 +9,6 @@ export class AppComponent {
   title = 'admin-dashboard';
 
   constructor() {
-    document.documentElement.classList.add('dark');
+    // document.documentElement.classList.add('dark');
   }
 }
