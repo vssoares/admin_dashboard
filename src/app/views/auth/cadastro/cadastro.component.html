@@ -57,7 +57,7 @@
 
       <div class="flex items-center p-6 pt-0">
         <button
-          (click)="criarConta()"
+          (click)="abrirModal(modalTemplate)"
           type="button"
           class="btn-primary bg-stone-800 text-white transition delay-75 ease-linear hover:bg-stone-950 dark:bg-white dark:text-black">
           Criar conta
@@ -66,3 +66,17 @@
     </form>
   </div>
 </div>
+
+<ng-template #modalTemplate>
+  <p>
+    modal 1
+  </p>
+  <button (click)="abrirModal(modalTemplate2)">modal 2</button>
+</ng-template>
+
+<ng-template #modalTemplate2>
+  <p>
+   modal 2
+  </p>
+</ng-template>
+
