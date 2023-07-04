@@ -34,7 +34,6 @@ export class ModalService {
     modalComponent.hostView.detectChanges();
 
     this.document.body.appendChild(modalComponent.location.nativeElement);
-    modalComponent.location.nativeElement.classList.add('animated', 'fadeAnimation');
     this.modalNotifier = new Subject();
     return modalComponent.instance
   }

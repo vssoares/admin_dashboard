@@ -1,4 +1,4 @@
-<div @fadeAnimation class="modal {{ options?.size }}">
+<div @fadeAnimation *ngIf="open" class="modal {{ options?.size }}">
   <div class="modal-header">
     {{ options?.title }}
     <span class="modal-close" (click)="close()">✕</span>

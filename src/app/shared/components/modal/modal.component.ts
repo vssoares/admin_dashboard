@@ -19,6 +19,7 @@ import { fadeAnimation } from '../../animations';
 })
 export class ModalComponent {
   @Input() options?: ModalOptions;
+  open = true;
 
   @Output() closeEvent = new EventEmitter();
   @Output() submitEvent = new EventEmitter();
@@ -26,12 +27,16 @@ export class ModalComponent {
   constructor(private elementRef: ElementRef) {}
 
   close() {
-    this.elementRef.nativeElement.remove();
+    setTimeout(() => {
+      this.elementRef.nativeElement.remove();
+    }, 300);
     this.closeEvent.emit();
   }
 
   submit(){
-    this.elementRef.nativeElement.remove();
+    setTimeout(() => {
+      this.elementRef.nativeElement.remove();
+    }, 300);
     this.submitEvent.emit();
   }
 }
