@@ -5,11 +5,9 @@ import { AuthComponent } from './auth.component';
 import { AuthRoutingModule } from './auth.routing';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { LoginComponent } from './login/login.component';
-import { ModalService } from 'src/app/shared/components/modal/modal.service';
 
 @NgModule({
-  declarations: [AuthComponent, CadastroComponent, LoginComponent],
+  declarations: [AuthComponent, LoginComponent, CadastroComponent],
   imports: [CommonModule, AuthRoutingModule, FormsModule, ReactiveFormsModule],
-  providers: [ModalService],
 })
 export class AuthModule {}
