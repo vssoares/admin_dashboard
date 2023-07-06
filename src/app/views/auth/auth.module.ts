@@ -5,9 +5,11 @@ import { AuthComponent } from './auth.component';
 import { AuthRoutingModule } from './auth.routing';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { LoginComponent } from './login/login.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { ToastrComponent } from 'src/app/shared/components/toastr/toastr.component';
 
 @NgModule({
   declarations: [AuthComponent, LoginComponent, CadastroComponent],
-  imports: [CommonModule, AuthRoutingModule, FormsModule, ReactiveFormsModule],
+  imports: [CommonModule, AuthRoutingModule, FormsModule, ReactiveFormsModule, MatSnackBarModule, ToastrComponent],
 })
 export class AuthModule {}
