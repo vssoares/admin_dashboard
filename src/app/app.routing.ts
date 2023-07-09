@@ -5,6 +5,11 @@ const routes: Routes = [
   // Fallback when no prior route is matched
   {
     path: '',
+    redirectTo: 'auth',
+    pathMatch: 'full',
+  },
+  {
+    path: 'auth',
     loadChildren: () =>
       import('./views/auth/auth.module').then(m => m.AuthModule),
   },
