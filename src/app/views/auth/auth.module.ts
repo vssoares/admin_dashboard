@@ -5,10 +5,16 @@ import { AuthComponent } from './auth.component';
 import { AuthRoutingModule } from './auth.routing';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { LoginComponent } from './login/login.component';
-import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
-  declarations: [AuthComponent, LoginComponent, CadastroComponent],
-  imports: [CommonModule, AuthRoutingModule, FormsModule, ReactiveFormsModule, MatSnackBarModule],
+   declarations: [AuthComponent, LoginComponent, CadastroComponent],
+   imports: [
+      CommonModule,
+      AuthRoutingModule,
+      FormsModule,
+      ReactiveFormsModule,
+      MatSnackBarModule,
+   ],
 })
 export class AuthModule {}

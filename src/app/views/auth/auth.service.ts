@@ -1,19 +1,36 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-
+import { env } from 'src/app/shared/environments/environments';
+import { Login } from 'src/app/shared/interfaces/login';
+import jwt_decode from 'jwt-decode';
 
 @Injectable({
-  providedIn: 'root'
+   providedIn: 'root',
 })
 export class AuthService {
+   api = env.API;
+   constructor(private http: HttpClient) {}
 
-  constructor(
-    private http: HttpClient,
-  ) { }
+   login({ email, password }: Login): Observable<any> {
+      return this.http.post(`${this.api}auth/login`, { email, password });
+   }
 
-  login(email: string, senha: string): Observable<any> {
-    return this.http.post('http://localhost:3000/login', { email, senha });
-  }
+   setToken(token: string) {
+      localStorage.setItem('token', token);
+   }
 
+   getToken() {
+      return localStorage.getItem('token');
+   }
+
+   getDecodeToken(): any {
+      const token = this.getToken();
+      if (!token) return null;
+      return jwt_decode(token);
+   }
+
+   logout() {
+      localStorage.removeItem('token');
+   }
 }

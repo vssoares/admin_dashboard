@@ -8,9 +8,16 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing';
 
 @NgModule({
-  declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule, BrowserAnimationsModule, HttpClientModule],
-  providers: [],
-  bootstrap: [AppComponent],
+   declarations: [AppComponent],
+   imports: [
+      BrowserModule,
+      AppRoutingModule,
+      FormsModule,
+      ReactiveFormsModule,
+      BrowserAnimationsModule,
+      HttpClientModule,
+   ],
+   providers: [],
+   bootstrap: [AppComponent],
 })
 export class AppModule {}

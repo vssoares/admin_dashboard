@@ -4,36 +4,33 @@ import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-cadastro',
-  templateUrl: './cadastro.component.html',
+   selector: 'app-cadastro',
+   templateUrl: './cadastro.component.html',
 })
 export class CadastroComponent implements OnInit {
-  formulario: FormGroup;
+   formulario: FormGroup;
 
-  modalRef: any;
+   modalRef: any;
 
-  constructor(
-    private formBuilder: FormBuilder,
-    private router: Router,
-  ) {
-    this.formulario = this.formBuilder.group({
-      nome: ['', Validators.required],
-      email: ['', Validators.required],
-      senha: ['', Validators.required],
-    });
-  }
+   constructor(private formBuilder: FormBuilder, private router: Router) {
+      this.formulario = this.formBuilder.group({
+         nome: ['', Validators.required],
+         email: ['', Validators.required],
+         senha: ['', Validators.required],
+      });
+   }
 
-  ngOnInit() {}
+   ngOnInit() {}
 
-  criarConta() {
-    this.formulario.markAllAsTouched();
-  }
+   criarConta() {
+      this.formulario.markAllAsTouched();
+   }
 
-  validarCampo(campo: FormControl) {
-    return !campo.valid && campo.touched;
-  }
+   validarCampo(campo: FormControl) {
+      return !campo.valid && campo.touched;
+   }
 
-  aplicarErro(campo: string) {
-    return this.validarCampo(this.formulario.get(campo) as FormControl);
-  }
+   aplicarErro(campo: string) {
+      return this.validarCampo(this.formulario.get(campo) as FormControl);
+   }
 }
