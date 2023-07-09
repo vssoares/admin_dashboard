@@ -2,6 +2,7 @@ import { Component, OnInit, TemplateRef } from '@angular/core';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-cadastro',
   templateUrl: './cadastro.component.html',
@@ -25,7 +26,6 @@ export class CadastroComponent implements OnInit {
   ngOnInit() {}
 
   criarConta() {
-    console.log(this.formulario.value);
     this.formulario.markAllAsTouched();
   }
 

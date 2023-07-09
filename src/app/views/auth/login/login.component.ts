@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { ToastrService } from 'src/app/shared/components/toastr/toastr.service';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +12,6 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private toastr: ToastrService,
   ) {
     this.formulario = this.formBuilder.group({
       email: ['', Validators.required],
@@ -24,9 +22,8 @@ export class LoginComponent implements OnInit {
   
   login() {
     this.formulario.markAllAsTouched();
-    this.toastr.success('Login efetuado com sucesso!');
     if (this.formulario.valid) {
-      console.log('Login efetuado com sucesso!');
+      
     }
   }
 
