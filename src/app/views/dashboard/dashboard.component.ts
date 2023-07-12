@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
+import { DashboardService } from './dashboard.service';
+import { MatDialog } from '@angular/material/dialog';
+import { ModalCriarContaComponent } from 'src/app/shared/components/modais/modal-criar-conta/modal-criar-conta.component';
 
 @Component({
    selector: 'app-dashboard',
@@ -6,10 +9,31 @@ import { Component, OnInit } from '@angular/core';
    styleUrls: ['./dashboard.component.css'],
 })
 export class DashboardComponent implements OnInit {
-   constructor() {}
+   service = inject(DashboardService);
 
-   teste() {
-      const a = 1;
+   constructor(public dialog: MatDialog) {}
+
+   ngOnInit() {
+      this.getContas();
    }
-   ngOnInit() {}
+
+   getContas() {
+      this.service.getContas().subscribe({
+         next: (res: any) => {
+            if (!res.accounts.length) {
+               this.openModalConta();
+            }
+         },
+      });
+   }
+   openModalConta() {
+      this.dialog.open(ModalCriarContaComponent, {
+         disableClose: true,
+         maxWidth: '400px',
+         width: '100%',
+         data: {
+            animal: 'panda',
+         },
+      });
+   }
 }

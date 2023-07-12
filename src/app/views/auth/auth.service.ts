@@ -33,4 +33,12 @@ export class AuthService {
    logout() {
       localStorage.removeItem('token');
    }
+
+   getHeaders() {
+      const headers = {
+         'Content-Type': 'application/json',
+         Authorization: `Bearer ${this.getToken()}`,
+      };
+      return headers;
+   }
 }

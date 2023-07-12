@@ -5,21 +5,9 @@
          <app-navbar></app-navbar>
          <div
             class="filament-main-content mx-auto w-full max-w-7xl flex-1 p-4 md:p-6 lg:p-8">
-            <header
-               class="filament-header items-start justify-between space-y-2 sm:flex sm:space-x-4 sm:space-y-0 sm:py-4 sm:rtl:space-x-reverse">
-               <div>
-                  <h1 class="text-2xl font-bold tracking-tight text-white">
-                     Products
-                  </h1>
-               </div>
-               <div
-                  class="filament-page-actions flex shrink-0 flex-wrap items-center justify-start gap-4">
-                  <a
-                     class="filament-button filament-button-size-md bg-primary hover:bg-primary focus:bg-primary focus:ring-offset-primary filament-page-button-action inline-flex min-h-[2.25rem] cursor-pointer items-center justify-center gap-1 rounded-lg border border-transparent px-4 py-1 text-sm font-medium text-white shadow outline-none transition-colors focus:ring-2 focus:ring-inset focus:ring-white focus:ring-offset-2 dark:focus:ring-offset-0">
-                     <span class=""> New product </span>
-                  </a>
-               </div>
-            </header>
+            <div class="text-white">
+               <router-outlet></router-outlet>
+            </div>
          </div>
       </div>
    </div>
