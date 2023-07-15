@@ -20,19 +20,17 @@ export class DashboardComponent implements OnInit {
    getContas() {
       this.service.getContas().subscribe({
          next: (res: any) => {
-            if (!res.accounts.length) {
-               this.openModalConta();
-            }
+            this.openModalConta(res.accounts);
          },
       });
    }
-   openModalConta() {
+   openModalConta(accounts: any[]) {
       this.dialog.open(ModalCriarContaComponent, {
          disableClose: true,
          maxWidth: '400px',
          width: '100%',
          data: {
-            animal: 'panda',
+            accounts,
          },
       });
    }
