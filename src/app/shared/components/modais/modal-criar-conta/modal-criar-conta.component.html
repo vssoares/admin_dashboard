@@ -1,18 +1,17 @@
-<h1 mat-dialog-title>Contas</h1>
-<div mat-dialog-content>
+<div class="px-2 py-8">
    <div class="text-center" *ngIf="!data.accounts.lenght">
-      <p>Não há contas cadastradas.</p>
+      <p class="text-xl">Não há contas cadastradas.</p>
+      <p class="text-gray-500">Adicione para continuar</p>
       <div class="flex items-center justify-center">
-         <mat-form-field appearance="outline">
-            <mat-label>Outline form field</mat-label>
-            <input matInput placeholder="Placeholder" />
-            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-            <mat-hint>Hint</mat-hint>
+         <mat-form-field class="add-conta" appearance="outline">
+            <mat-label>Nome</mat-label>
+            <input [(ngModel)]="nome" matInput autocomplete="off" />
          </mat-form-field>
          <button
             (click)="addConta()"
             mat-mini-fab
             color="primary"
+            class="ml-5"
             aria-label="Example icon button with a menu icon">
             <mat-icon>add</mat-icon>
          </button>

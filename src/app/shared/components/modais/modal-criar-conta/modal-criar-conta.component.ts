@@ -8,6 +8,7 @@ import { MatInputModule } from '@angular/material/input';
 @Component({
    selector: 'app-modal-criar-conta',
    templateUrl: 'modal-criar-conta.component.html',
+   styleUrls: ['modal-criar-conta.component.css'],
    standalone: true,
    imports: [
       MatDialogModule,
